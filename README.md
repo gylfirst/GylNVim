@@ -2,7 +2,7 @@
 
 This repository contains all my configuration files for my NeoVim. You are free to use the config and modify it.
 
-> You need Git installed on your computer.
+> You need sudo and git installed on your computer.
 
 ## Config details
 

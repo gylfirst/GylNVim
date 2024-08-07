@@ -59,6 +59,7 @@ install_neovim() {
 copy_config() {
     # Copy the configuration files to the NeoVim config directory
     echo -e "Copying the configuration files..."
+    rm -rf ~/.config/nvim
     cp -r ./nvim ~/.config/nvim
     if [ -d ~/.config/nvim ]; then
         echo -e "Configuration files copied"

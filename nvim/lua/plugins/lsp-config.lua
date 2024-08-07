@@ -4,16 +4,16 @@ return {
         lazy = false,
         config = function()
             require("mason").setup()
-        end
+        end,
     },
     {
         "williamboman/mason-lspconfig.nvim",
         lazy = false,
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls" }
+                ensure_installed = { "lua_ls" },
             })
-        end
+        end,
     },
     {
         "neovim/nvim-lspconfig",
@@ -23,6 +23,6 @@ return {
             lspconfig.lua_ls.setup({})
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover)
-        end
-    },  
+        end,
+    },
 }

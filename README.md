@@ -14,16 +14,23 @@ This repository contains all my configuration files for my NeoVim. You are free 
 - lualine
 - mason
 - mason-lspconfig
+- mason-null-ls
 - neo-tree
+- null_ls
 - nvim-lspconfig
 - telescope
 - treesitter
+- wakatime
 
 ---
 
 #### LSP (language Server Protocol)
 
 You can add more lsp using `mason-lspconfig` plugin. Check [here](https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers) for the list. To configure them, use the `nvim-lspconfig` plugin.
+
+#### Formater
+
+You can add more formatter to install on the configuration, with `mason-null-ls` config. You can add it to the `ensure_installed` list.
 
 #### Keybindings
 
@@ -45,6 +52,10 @@ chmod +x ./install.sh
 
 You can now launch NeoVim using `nvim` command in  your terminal.  
 It will install lazy and all plugins at first launch. You can restart it after in order to get the main menu (alpha).
+
+#### Wakatime
+
+The configuration comes with Wakatime, so you need to give the API key for this. To do it, type `:WakaTimeApiKey` and enter your API Key. More information [here](https://wakatime.com/neovim#lazyvim-install).
 
 # Author
 [Gylfirst](https://github.com/gylfirst)

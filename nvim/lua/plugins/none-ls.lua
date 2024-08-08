@@ -6,6 +6,7 @@ return {
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.formatting.prettier,
 				},
 			})
 			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
@@ -20,7 +21,7 @@ return {
 		},
 		config = function()
 			require("mason-null-ls").setup({
-				ensure_installed = { "stylua" },
+				ensure_installed = { "stylua", "pylyzer", "debugpy" },
 				automatic_installation = true,
 			})
 		end,

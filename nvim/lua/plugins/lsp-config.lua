@@ -11,7 +11,7 @@ return {
         lazy = false,
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "marksman", "pylyzer", "ruff_lsp" },
+                ensure_installed = { "lua_ls", "marksman", "pylyzer", "ruff" },
             })
         end,
     },
@@ -31,9 +31,10 @@ return {
             lspconfig.pylyzer.setup({
                 capabilities = lsp_cap,
             })
-            lspconfig.ruff_lsp.setup({
+            lspconfig.ruff.setup({
                 capabilities = lsp_cap,
             })
+
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover)
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

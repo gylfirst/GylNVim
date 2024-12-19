@@ -16,6 +16,7 @@ This repository contains all my configuration files for my NeoVim. You are free 
 - cmp-luasnip
 - cmp-nvim-lsp
 - friendly-snippets
+- github-copilot
 - ident-blankline
 - lualine
 - LuaSnip
@@ -77,6 +78,10 @@ chmod +x ./install.sh
 
 You can now launch NeoVim using `nvim` command in your terminal.  
 It will install lazy and all plugins at first launch. You can restart it after in order to get the main menu (alpha).
+
+### GitHub Copilot
+
+You need to execute the following command `:Copilot setup` with NeoVim launched. Follow the instructions given.
 
 #### Wakatime
 

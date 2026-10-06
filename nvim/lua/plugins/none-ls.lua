@@ -9,7 +9,6 @@ return {
 					null_ls.builtins.formatting.prettier,
 				},
 			})
-			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 		end,
 	},
 	{
@@ -21,8 +20,8 @@ return {
 		},
 		config = function()
 			require("mason-null-ls").setup({
-				ensure_installed = { "stylua", "pylyzer", "debugpy" },
-				automatic_installation = true,
+                ensure_installed = { "stylua", "ruff", "debugpy" },
+                automatic_installation = true,
 			})
 		end,
 	},

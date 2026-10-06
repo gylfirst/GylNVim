@@ -7,7 +7,7 @@ return {
     },
     config = function()
         local dap, dapui = require("dap"), require("dapui")
-        local python_venv_path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+        local python_venv_path = vim.fn.expand("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 
         dapui.setup()
 
@@ -21,9 +21,10 @@ return {
             dapui.close()
         end
 
-        require("dap-python").setup(python_venv_path)
-
-        vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {})
-        vim.keymap.set("n", "<leader>c", dap.continue, {})
+        if vim.fn.filereadable(python_venv_path) == 1 then
+            require("dap-python").setup(python_venv_path)
+        else
+            vim.notify("Debugpy not found via Mason. Please install it via :MasonInstall debugpy", vim.log.levels.WARN)
+        end
     end,
 }

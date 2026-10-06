@@ -38,6 +38,17 @@ update_and_install() {
     fi
 }
 
+check_dependencies() {
+    local deps = ("git" "fd" "node" "python3")
+    echo -e "Checking dependencies..."
+    for dep in "${deps[@]}"; do
+        if ! command -v $dep >/dev/null 2>&1; then
+            echo -e "Error: $dep is not installed"
+            exit 1
+        fi
+    done
+}
+
 install_neovim() {
     echo "Installing NeoVim..."
     
@@ -108,6 +119,11 @@ main() {
 
     # Install neovim depending of the Linux distribution
     install_neovim
+
+    # Draw a line
+    echo -e "\n-----------------------------------------------------------\n"
+    # Check if the dependencies are installed
+    check_dependencies
 
     # Draw a line
     echo -e "\n-----------------------------------------------------------\n"

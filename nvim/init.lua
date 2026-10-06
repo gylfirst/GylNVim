@@ -12,4 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+require("keymaps")
 require("lazy").setup("plugins")
+local lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json"
+if vim.fn.filereadable(lockfile) == 0 then
+    vim.defer_fn(function()
+        requiere("lazy").lock()
+    end, 1000)
+end
+

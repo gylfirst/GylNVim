@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local opts = { nnoremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 
 -- Leader
 vim.g.mapleader = " "
@@ -12,7 +12,7 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- Général
-map("n", "<leader>h", "nohlsearch:<CR>", opts)
+map("n", "<leader>h", ":nohlsearch:<CR>", opts)
 map("n", "<leader>t", ":Neotree dir=./<CR>", opts)
 map("n", "<C-n>", ":Neotree filesystem reveal left<CR>", opts)
 map("n", "<leader>bf", ":Neotree buffers reveal float<CR>", opts)
@@ -30,11 +30,14 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 map("n", "<leader>gf", vim.lsp.buf.format, opts)
 
 -- Debug
-map("n", "<leader>b", function() require("dap").toggle_breakpoint() end, opts)
-map("n", "<leader>c", function() require("dap").continue() end, opts)
+map("n", "<leader>b", function()
+	require("dap").toggle_breakpoint()
+end, opts)
+map("n", "<leader>c", function()
+	require("dap").continue()
+end, opts)
 
 -- Venv
 map("n", "<leader>v", "<cmd>VenvSelect<CR>", opts)
 
 return {}
-

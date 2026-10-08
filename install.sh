@@ -39,7 +39,7 @@ update_and_install() {
 }
 
 check_dependencies() {
-    local deps = ("git" "fd" "node" "python3")
+    local deps=("git" "fd" "node" "python3")
     echo -e "Checking dependencies..."
     for dep in "${deps[@]}"; do
         if ! command -v $dep >/dev/null 2>&1; then

@@ -20,8 +20,7 @@ return {
 		},
 		config = function()
 			require("mason-null-ls").setup({
-                ensure_installed = { "stylua", "ruff", "debugpy" },
-                automatic_installation = true,
+				handlers = {},
 			})
 		end,
 	},

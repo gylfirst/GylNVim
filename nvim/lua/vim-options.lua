@@ -8,4 +8,3 @@ vim.opt.background = "dark"
 vim.opt.swapfile = false
 
 vim.wo.number = true
-
